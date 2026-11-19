@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>11-сынып Биология | 7-зертханалық жұмыс: Пияз тамыры ұшындағы жасушалардан митоздың белсенділік деңгейін анықтау</title>
+<style>
+  :root {
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+    --surface-2: #f8fafc;
+    --border: #cbd5e1;
+    --text: #0f172a;
+    --text-muted: #475569;
+    --primary: #065f46;
+    --primary-hover: #047857;
+    --primary-light: #ecfdf5;
+    --primary-border: #a7f3d0;
+    --accent: #0d9488;
+    --purple: #6d28d9;
+    --purple-light: #f5f3ff;
+    --danger: #be123c;
+    --danger-light: #fff1f2;
+    --warning: #b45309;
+    --warning-light: #fffbeb;
+    --shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+    --radius: 12px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    background: linear-gradient(135deg, #064e3b 0%, #065f46 55%, #0f766e 100%);
+    color: #ffffff;
+    padding: 16px 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .header-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .brand-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  header h1 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .student-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    background: rgba(15, 23, 42, 0.28);
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .student-bar label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #d1fae5;
+  }
+
+  .student-bar input {
+    background: rgba(255, 255, 255, 0.95);
+    color: #0f172a;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 9px;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+  }
+
+  .student-bar input#inpName {
+    width: 175px;
+  }
+
+  .student-bar input#inpClass {
+    width: 74px;
+  }
+
+  /* Navigation Tabs */
+  nav.tabs-nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+  }
+
+  .tabs-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tab-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tab-btn {
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 8px 14px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tab-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .tab-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 6px rgba(6, 95, 70, 0.25);
+  }
+
+  .progress-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .pill {
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--primary-light);
+    color: var(--primary);
+    border: 1px solid var(--primary-border);
+  }
+
+  .btn-code {
+    background: #0f172a;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn-code:hover {
+    background: #1e293b;
+  }
+
+  /* Main Container */
+  main {
+    flex: 1;
+    max-width: 1320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 16px 40px 16px;
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+    animation: fadeIn 0.22s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Grid & Cards */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 20px;
+  }
+
+  .grid-equal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 980px) {
+    .grid-2, .grid-equal {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .card-title {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .card-subtitle {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Buttons */
+  .btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .btn:hover {
+    background: var(--surface-2);
+    border-color: #94a3b8;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+  }
+
+  .btn-primary:hover {
+    background: var(--primary-hover);
+  }
+
+  .btn-purple {
+    background: var(--purple);
+    color: #ffffff;
+    border-color: var(--purple);
+  }
+
+  .btn-purple:hover {
+    background: #5b21b6;
+  }
+
+  .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .zoom-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+  }
+
+  /* Microscope Viewport */
+  .microscope-shell {
+    background: #0f172a;
+    border-radius: 14px;
+    padding: 14px;
+    border: 2px solid #334155;
+    color: #f8fafc;
+  }
+
+  .scope-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    background: #1e293b;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .focus-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+  }
+
+  .focus-box input[type="range"] {
+    accent-color: #10b981;
+    cursor: pointer;
+  }
+
+  .viewport-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: radial-gradient(circle at center, #fdf2f8 0%, #fce7f3 68%, #1e1b4b 96%, #020617 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #microscopeSvg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s ease, filter 0.2s ease;
+    transform-origin: center center;
+  }
+
+  .onion-cell {
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .onion-cell:hover rect.cell-wall {
+    stroke: #047857;
+    stroke-width: 3.2;
+  }
+
+  .onion-cell.selected rect.cell-wall {
+    stroke: #f59e0b;
+    stroke-width: 4;
+  }
+
+  .cell-badge-tag {
+    pointer-events: none;
+    font-size: 9.5px;
+    font-weight: 800;
+  }
+
+  /* Inspector & Mitotic Index */
+  .inspector-box {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+  }
+
+  .inspector-grid {
+    display: grid;
+    grid-template-columns: 135px 1fr;
+    gap: 12px;
+    align-items: center;
+  }
+
+  @media (max-width: 520px) {
+    .inspector-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .detail-svg-box {
+    background: #fdf2f8;
+    border: 2px solid #f9a8d4;
+    border-radius: 10px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .classify-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .phase-chip {
+    padding: 5px 9px;
+    border-radius: 7px;
+    font-size: 11.5px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  .phase-chip:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+  }
+
+  .phase-chip.active-choice {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+  }
+
+  .count-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    margin-bottom: 12px;
+  }
+
+  .count-table th, .count-table td {
+    border: 1px solid var(--border);
+    padding: 6px 8px;
+    text-align: left;
+  }
+
+  .count-table th {
+    background: #f1f5f9;
+    font-weight: 700;
+  }
+
+  .count-table input[type="number"] {
+    width: 64px;
+    padding: 4px 6px;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .formula-box {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-border);
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .formula-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .formula-row input {
+    width: 82px;
+    padding: 6px 8px;
+    border: 1.5px solid var(--primary);
+    border-radius: 7px;
+    font-weight: 800;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Feedback alerts */
+  .feedback {
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    display: none;
+  }
+
+  .feedback.show {
+    display: block;
+  }
+
+  .feedback.ok {
+    background: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+  }
+
+  .feedback.err {
+    background: #fff1f2;
+    color: #9f1239;
+    border: 1px solid #fda4af;
+  }
+
+  .feedback.info {
+    background: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+  }
+
+  /* Tab 2: Timeline & Sketching Canvas */
+  .timeline-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .stage-btn {
+    flex: 1 1 110px;
+    padding: 8px 10px;
+    border-radius: 9px;
+    border: 1.5px solid var(--border);
+    background: var(--surface-2);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s;
+  }
+
+  .stage-btn.active {
+    background: var(--purple);
+    color: #ffffff;
+    border-color: var(--purple);
+  }
+
+  .anim-stage-card {
+    background: #fdf4ff;
+    border: 1.5px solid #e9d5ff;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .canvas-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    background: var(--surface-2);
+    padding: 8px 10px;
+    border-radius: 9px;
+    border: 1px solid var(--border);
+  }
+
+  #sketchCanvas {
+    width: 100%;
+    height: 310px;
+    background: #ffffff;
+    border: 2px dashed #94a3b8;
+    border-radius: 10px;
+    cursor: crosshair;
+    touch-action: none;
+    display: block;
+  }
+
+  /* Tab 3: Textbook Tables */
+  .lab-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .lab-table th {
+    background: #065f46;
+    color: #ffffff;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #064e3b;
+    font-weight: 700;
+  }
+
+  .lab-table td {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  .lab-table tr:nth-child(even) td {
+    background: #f8fafc;
+  }
+
+  .lab-table select {
+    width: 100%;
+    padding: 6px 8px;
+    border-radius: 7px;
+    border: 1px solid #94a3b8;
+    font-size: 12.5px;
+    background: #ffffff;
+    color: var(--text);
+  }
+
+  .row-correct td {
+    background: #ecfdf5 !important;
+  }
+
+  .row-wrong td {
+    background: #fff1f2 !important;
+  }
+
+  /* Tab 4: Quiz */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 820px) {
+    .quiz-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .quiz-item {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+
+  .quiz-item.q-ok {
+    background: #ecfdf5;
+    border-color: #6ee7b7;
+  }
+
+  .quiz-item.q-err {
+    background: #fff1f2;
+    border-color: #fda4af;
+  }
+
+  .quiz-q {
+    font-weight: 700;
+    font-size: 13.5px;
+    margin-bottom: 8px;
+  }
+
+  .quiz-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 6px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .quiz-opt:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .quiz-exp {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #cbd5e1;
+    font-size: 12px;
+    color: #334155;
+    display: none;
+  }
+
+  .quiz-exp.show {
+    display: block;
+  }
+
+  /* Modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 50;
+  }
+
+  .modal-backdrop.open {
+    display: flex;
+  }
+
+  .modal-card {
+    background: #ffffff;
+    border-radius: 14px;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.25);
+  }
+
+  .code-textarea {
+    width: 100%;
+    height: 110px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #0f172a;
+    color: #34d399;
+    margin: 10px 0;
+    resize: vertical;
+  }
+
+  /* Teacher Analytics */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 165px 1fr 52px;
+    align-items: center;
+    gap: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+
+  .bar-track {
+    height: 18px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #065f46, #10b981);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+  }
+
+  .note-input {
+    width: 100%;
+    padding: 4px 7px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  /* Toast */
+  #toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.25s ease;
+    pointer-events: none;
+    z-index: 60;
+  }
+
+  #toast.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="brand-badges">
+        <span class="badge">11-сынып Биология</span>
+        <span class="badge">7-зертханалық жұмыс</span>
+        <span class="badge">Allium cepa L.</span>
+      </div>
+      <h1>7-зертханалық жұмыс. Пияз тамыры ұшындағы жасушалардан митоздың белсенділік деңгейін анықтау</h1>
+    </div>
+
+    <div class="student-bar">
+      <label for="inpName">Оқушының аты-жөні:</label>
+      <input type="text" id="inpName" placeholder="Мысалы: Болатұлы Арман" />
+      <label for="inpClass">Сыныбы:</label>
+      <input type="text" id="inpClass" value="11 «А»" />
+    </div>
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <div class="tabs-inner">
+    <div class="tab-buttons" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="tab1" onclick="switchTab('tab1')">
+        1. Виртуалды микроскоп және Митоздық индекс
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab2" onclick="switchTab('tab2')">
+        2. Фазаларды талдау және Сурет салу
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab3" onclick="switchTab('tab3')">
+        3. Бақылау кестелері
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab4" onclick="switchTab('tab4')">
+        4. Білімді бекіту тесті
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab5" onclick="switchTab('tab5')">
+        5. Мұғалім панелі
+      </button>
+    </div>
+
+    <div class="progress-pills">
+      <span class="pill" id="pillMicro">Микроскоп: 0/20</span>
+      <span class="pill" id="pillTables">Кестелер: 0/11</span>
+      <span class="pill" id="pillQuiz">Тест: 0/6</span>
+      <button type="button" class="btn-code" onclick="openCodeModal()">Нәтиже коды</button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- ===================================================================== -->
+  <!-- TAB 1: ВИРТУАЛДЫ МИКРОСКОП ЖӘНЕ МИТОЗДЫҚ ИНДЕКС                       -->
+  <!-- ===================================================================== -->
+  <section id="tab1" class="tab-panel active">
+    <div class="grid-2">
+      <!-- Left: Microscope Viewport -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Жарық микроскопы: «Пияз тамыры ұшының жасушаларындағы митоз»</div>
+            <div class="card-subtitle">Көру өрісіндегі 20 жасушаны басып талдаңыз, ұлғайту мен фокусты реттеңіз</div>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm" onclick="generateNewField()">Жаңа көру өрісі</button>
+            <button type="button" class="btn btn-sm" onclick="autoRevealLabels()">Көмекші белгілер</button>
+          </div>
+        </div>
+
+        <div class="microscope-shell">
+          <div class="scope-controls">
+            <div class="btn-group">
+              <span style="font-size:12px; font-weight:700; color:#94a3b8; align-self:center; margin-right:4px;">Ұлғайту:</span>
+              <button type="button" class="btn btn-sm zoom-btn active" data-zoom="1" onclick="setZoom(1, this)">100× (Шолу)</button>
+              <button type="button" class="btn btn-sm zoom-btn" data-zoom="1.32" onclick="setZoom(1.32, this)">400× (Орташа)</button>
+              <button type="button" class="btn btn-sm zoom-btn" data-zoom="1.68" onclick="setZoom(1.68, this)">1000× (Иммерсия)</button>
+            </div>
+
+            <div class="focus-box">
+              <label for="focusSlider">Микровинт (Фокус):</label>
+              <input type="range" id="focusSlider" min="-10" max="10" value="0" oninput="updateFocus(this.value)" />
+              <span id="focusStatus" style="color:#34d399; min-width:56px;">Анық (0)</span>
+            </div>
+          </div>
+
+          <div class="viewport-frame">
+            <svg id="microscopeSvg" viewBox="0 0 600 450" aria-label="Пияз тамыры ұшының микропрепараты"></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Cell Inspector & Mitotic Index Calculator -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Жасуша инспекторы және Митоздық индекс</div>
+            <div class="card-subtitle">Таңдалған жасушаның фазасын анықтап, митоздық индексті есептеңіз</div>
+          </div>
+        </div>
+
+        <!-- Selected Cell Detailed View -->
+        <div class="inspector-box">
+          <div class="inspector-grid">
+            <div class="detail-svg-box">
+              <svg id="detailCellSvg" viewBox="0 0 120 120" width="118" height="118"></svg>
+            </div>
+            <div>
+              <div style="font-size:12px; font-weight:700; color:var(--primary);" id="selCellHeader">Жасуша #1 таңдалды</div>
+              <div style="font-size:15px; font-weight:800; margin:2px 0;" id="selCellPhaseTitle">Интерфаза</div>
+              <div style="font-size:12.5px; font-weight:700; color:var(--purple);" id="selCellFormula">Хромосома / ДНҚ жиынтығы: 2n4c</div>
+              <p style="font-size:12px; color:var(--text-muted); margin-top:4px;" id="selCellDesc">
+                Ядро қабықшасы айқын көрінеді, ядрошық байқалады, хроматин жіпшелері шиыршықталмаған күйде.
+              </p>
+            </div>
+          </div>
+
+          <div style="margin-top:10px; padding-top:8px; border-top:1px dashed #cbd5e1;">
+            <span style="font-size:11.5px; font-weight:700; color:var(--text);">Оқушы жіктеуі (осы жасуша қай фазада?):</span>
+            <div class="classify-buttons" id="classifyButtons">
+              <button type="button" class="phase-chip" onclick="classifySelectedCell('Интерфаза')">Интерфаза</button>
+              <button type="button" class="phase-chip" onclick="classifySelectedCell('Профаза')">Профаза</button>
+              <button type="button" class="phase-chip" onclick="classifySelectedCell('Метафаза')">Метафаза</button>
+              <button type="button" class="phase-chip" onclick="classifySelectedCell('Анафаза')">Анафаза</button>
+              <button type="button" class="phase-chip" onclick="classifySelectedCell('Телофаза')">Телофаза</button>
+            </div>
+            <div id="classifyMsg" style="font-size:12px; font-weight:700; margin-top:6px;"></div>
+          </div>
+        </div>
+
+        <!-- Cell Count Summary Table -->
+        <table class="count-table">
+          <thead>
+            <tr>
+              <th>Саты / Фаза</th>
+              <th>Хромосома / ДНҚ</th>
+              <th>Жіктелген саны</th>
+              <th>Көру өрісіндегі саны</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Интерфаза (бөлінбейтін)</td>
+              <td>2n2c → 2n4c</td>
+              <td id="cntUserInter">0</td>
+              <td><input type="number" id="inpCountInter" min="0" max="20" value="0" /></td>
+            </tr>
+            <tr>
+              <td>Профаза</td>
+              <td>2n4c</td>
+              <td id="cntUserPro">0</td>
+              <td><input type="number" id="inpCountPro" min="0" max="20" value="0" /></td>
+            </tr>
+            <tr>
+              <td>Метафаза</td>
+              <td>2n4c</td>
+              <td id="cntUserMeta">0</td>
+              <td><input type="number" id="inpCountMeta" min="0" max="20" value="0" /></td>
+            </tr>
+            <tr>
+              <td>Анафаза</td>
+              <td>4n4c</td>
+              <td id="cntUserAna">0</td>
+              <td><input type="number" id="inpCountAna" min="0" max="20" value="0" /></td>
+            </tr>
+            <tr>
+              <td>Телофаза</td>
+              <td>2n2c (әр полюсте)</td>
+              <td id="cntUserTelo">0</td>
+              <td><input type="number" id="inpCountTelo" min="0" max="20" value="0" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Mitotic Index Calculator -->
+        <div class="formula-box">
+          <div style="font-size:12.5px; font-weight:800; color:var(--primary);">
+            Митоздық индекс (МИ) формуласы:
+          </div>
+          <div style="font-size:12px; color:#064e3b; margin-top:2px;">
+            МИ (%) = (Бөлінетін жасушалар [П + М + А + Т] / Жалпы жасушалар [20]) × 100%
+          </div>
+          <div class="formula-row">
+            <label for="inpMitoticIndex" style="font-size:12.5px; font-weight:700;">Есептелген МИ (%):</label>
+            <input type="number" id="inpMitoticIndex" step="0.1" min="0" max="100" placeholder="0.0" />
+            <button type="button" class="btn btn-primary btn-sm" onclick="verifyMitoticIndex()">Есептеуді тексеру</button>
+            <button type="button" class="btn btn-sm" onclick="fillCountsFromClassification()">Жіктеуден көшіру</button>
+          </div>
+          <div id="miFeedback" class="feedback"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 2: ФАЗАЛАРДЫ ТАЛДАУ ЖӘНЕ СУРЕТ САЛУ                              -->
+  <!-- ===================================================================== -->
+  <section id="tab2" class="tab-panel">
+    <div class="grid-equal">
+      <!-- Left: Animated Timeline of Interphase & Mitosis -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Жасушалық цикл және митоз фазаларының динамикалық моделі</div>
+            <div class="card-subtitle">Кезеңдерді ретімен таңдап, хромосомалар мен бөліну ұршығының қозғалысын бақылаңыз</div>
+          </div>
+          <button type="button" class="btn btn-purple btn-sm" id="btnAutoPlay" onclick="toggleTimelinePlay()">
+            ▶ Автоматты ойнату
+          </button>
+        </div>
+
+        <div class="timeline-bar" id="timelineButtons">
+          <button type="button" class="stage-btn active" onclick="selectTimelineStage(0)">G₁ кезеңі</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(1)">S кезеңі</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(2)">G₂ кезеңі</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(3)">Профаза</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(4)">Метафаза</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(5)">Анафаза</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(6)">Телофаза</button>
+          <button type="button" class="stage-btn" onclick="selectTimelineStage(7)">Цитокинез</button>
+        </div>
+
+        <div class="anim-stage-card">
+          <svg id="timelineSvg" viewBox="0 0 380 230" style="width:100%; max-height:235px;"></svg>
+          <div style="margin-top:10px; text-align:left; background:#ffffff; padding:12px; border-radius:10px; border:1px solid #e9d5ff;">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+              <h3 id="tlStageTitle" style="font-size:15px; font-weight:800; color:#4c1d95;">Интерфаза: G₁ (Синтез алдындағы кезең)</h3>
+              <span id="tlStageFormula" class="pill" style="background:#f5f3ff; color:#6d28d9; border-color:#ddd6fe;">Жиынтығы: 2n2c</span>
+            </div>
+            <p id="tlStageDesc" style="font-size:13px; color:#334155; margin-top:6px;">
+              Жасуша өседі, нәруыздар мен РНҚ синтезделеді, органоидтар саны артады. ДНҚ репликациясына дайындық жүреді.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Cell Sketching & Structure Builder Canvas -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Зертханалық дәптер: Фаза суретін салу және құрастыру</div>
+            <div class="card-subtitle">Таңдалған фазаның жасуша қабырғасын, хромосомалары мен ұршық жіпшелерін сызыңыз</div>
+          </div>
+        </div>
+
+        <div class="canvas-toolbar">
+          <label for="sketchPhaseSelect" style="font-size:12px; font-weight:700;">Фаза:</label>
+          <select id="sketchPhaseSelect" onchange="switchSketchPhase(this.value)" style="padding:5px 8px; border-radius:6px; border:1px solid #94a3b8; font-size:12px; font-weight:700;">
+            <option value="Профаза">Профаза (2n4c)</option>
+            <option value="Метафаза">Метафаза (2n4c)</option>
+            <option value="Анафаза">Анафаза (4n4c)</option>
+            <option value="Телофаза">Телофаза (2n2c)</option>
+          </select>
+
+          <label for="brushColor" style="font-size:12px; font-weight:700;">Түс:</label>
+          <input type="color" id="brushColor" value="#6d28d9" style="width:28px; height:26px; border:none; background:none; cursor:pointer;" />
+
+          <button type="button" class="btn btn-sm" onclick="stampCellTemplate()">Жасуша қабырғасын қою</button>
+          <button type="button" class="btn btn-sm" onclick="stampPhaseHint()">Құрылым үлгісі</button>
+          <button type="button" class="btn btn-sm" onclick="clearSketchCanvas()">Тазалау</button>
+        </div>
+
+        <canvas id="sketchCanvas" width="540" height="310"></canvas>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:10px;">
+          <span id="sketchStatusText" style="font-size:12px; color:var(--text-muted); font-weight:600;">
+            Тінтуірмен немесе сенсорлық экранда саусақпен сурет салыңыз.
+          </span>
+          <button type="button" class="btn btn-primary btn-sm" onclick="saveCurrentSketch()">
+            Суретті дәптерге бекіту
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 3: БАҚЫЛАУ КЕСТЕЛЕРІ (ОҚУЛЫҚ БОЙЫНША)                              -->
+  <!-- ===================================================================== -->
+  <section id="tab3" class="tab-panel">
+    <div style="display:flex; flex-direction:column; gap:22px;">
+      <!-- Table 1: Features of Mitosis Phases -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">1-кесте. Митоз фазаларының ерекшеліктері (Оқулықтағы 4-тапсырма)</div>
+            <div class="card-subtitle">Әрбір фазаға тән негізгі морфологиялық өзгерісті таңдап, тексеріңіз</div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="checkTextbookTables()">Кестелерді тексеру</button>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="lab-table">
+            <thead>
+              <tr>
+                <th style="width:20%;">Фазаның атауы</th>
+                <th style="width:58%;">Фазаның ерекшелігі</th>
+                <th style="width:22%;">Дәптердегі сурет күйі</th>
+              </tr>
+            </thead>
+            <tbody id="table1Body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Table 2: «Жасушадағы митоз процесі» -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">2-кесте. «Жасушадағы митоз процесі» (Оқулықтағы қорытынды тапсырма)</div>
+            <div class="card-subtitle">Интерфаза (G₁, S, G₂) және митоз фазаларындағы процестер мен хромосома/ДНҚ жиынтығын (n, c) сәйкестендіріңіз</div>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="checkTextbookTables()">Кестелерді тексеру</button>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="lab-table">
+            <thead>
+              <tr>
+                <th colspan="2" style="width:30%;">Фаза атауы</th>
+                <th style="width:45%;">Жасушада өтетін процесс</th>
+                <th style="width:25%;">Хромосома саны (n) және ДНҚ-ның орналасуы (c)</th>
+              </tr>
+            </thead>
+            <tbody id="table2Body"></tbody>
+          </table>
+        </div>
+
+        <div id="tablesFeedback" class="feedback"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 4: БІЛІМДІ БЕКІТУ ТЕСТІ (6 СҰРАҚ)                                  -->
+  <!-- ===================================================================== -->
+  <section id="tab4" class="tab-panel">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Білімді бекіту тесті (6 сұрақ)</div>
+          <div class="card-subtitle">Митоздық индекс, әр фазадағы n және c жиынтығы, қоршаған орта факторлары және митоздың биологиялық маңызы</div>
+        </div>
+        <button type="button" class="btn btn-purple" onclick="checkQuiz()">Тестті тексеру</button>
+      </div>
+
+      <div class="quiz-grid" id="quizContainer"></div>
+
+      <div id="quizFeedback" class="feedback"></div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- TAB 5: МҰҒАЛІМ ПАНЕЛІ                                                 -->
+  <!-- ===================================================================== -->
+  <section id="tab5" class="tab-panel">
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Мұғалім панелі: Оқушылар нәтижесін қабылдау және аналитика</div>
+            <div class="card-subtitle">Оқушылардан алынған Base64/JSON нәтиже кодтарын қойып, сыныптың меңгеру деңгейін талдаңыз</div>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm" onclick="addCurrentStudentToTeacher()">Ағымдағы оқушыны қосу</button>
+            <button type="button" class="btn btn-primary btn-sm" onclick="exportTeacherCSV()">CSV экспорттау</button>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr auto; gap:10px; align-items:start; margin-bottom:14px;">
+          <textarea id="teacherImportArea" class="code-textarea" style="height:74px; margin:0;" placeholder="Оқушы кодын осында қойыңыз (бір немесе бірнеше жолға Base64/JSON код)..."></textarea>
+          <button type="button" class="btn btn-purple" style="height:74px;" onclick="importCodesToTeacher()">Кодты жүктеу</button>
+        </div>
+
+        <div class="grid-equal">
+          <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:10px; padding:14px;">
+            <h3 style="font-size:14px; font-weight:800; margin-bottom:6px;">Бөлімдер бойынша орташа меңгеру (%)</h3>
+            <div class="bar-chart" id="analyticsChart"></div>
+          </div>
+
+          <div style="background:var(--primary-light); border:1px solid var(--primary-border); border-radius:10px; padding:14px;">
+            <h3 style="font-size:14px; font-weight:800; color:var(--primary); margin-bottom:6px;">Әдістемелік талдау және типтік қателер</h3>
+            <ul style="font-size:12.5px; color:#064e3b; padding-left:18px; display:flex; flex-direction:column; gap:6px;">
+              <li><strong>Анафазадағы жиынтық (4n4c):</strong> Еншілес хроматидалар ажырап, дербес хромосомаларға айналғандықтан, жасушадағы хромосома саны уақытша екі еселенеді (4n4c).</li>
+              <li><strong>Митоздық индекс:</strong> Интерфазадағы жасушалар бөліну сатысына кірмейді, алымына тек Профаза + Метафаза + Анафаза + Телофаза қосындысы алынады.</li>
+              <li><strong>Биологиялық маңызы:</strong> Генетикалық ақпарат пен хромосомалар санының (2n) аналық жасушадан еншілес жасушаларға тең және өзгеріссіз берілуін қамтамасыз етеді.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Сынып журналы және жеке түзету ескертпелері</div>
+            <div class="card-subtitle">Әр оқушының балын қарап, мұғалім ескертпесін жазыңыз</div>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="lab-table">
+            <thead>
+              <tr>
+                <th>Оқушының аты-жөні</th>
+                <th>Сыныбы</th>
+                <th>Микроскоп &amp; МИ</th>
+                <th>Кестелер (11)</th>
+                <th>Тест (6)</th>
+                <th>Жалпы (%)</th>
+                <th>Мұғалім ескертпесі</th>
+              </tr>
+            </thead>
+            <tbody id="teacherTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Student Code Modal -->
+<div id="codeModal" class="modal-backdrop">
+  <div class="modal-card">
+    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+      <h3 style="font-size:16px; font-weight:800;">Оқушының нәтиже коды (Мұғалім панеліне жіберу үшін)</h3>
+      <button type="button" class="btn btn-sm" onclick="closeCodeModal()">✕</button>
+    </div>
+    <p style="font-size:12.5px; color:var(--text-muted); margin-top:8px;">
+      Төмендегі кодты көшіріп, мұғалімге жіберіңіз немесе «Мұғалім панеліне тікелей жіберу» батырмасын басыңыз.
+    </p>
+    <textarea id="studentCodeOutput" class="code-textarea" readonly></textarea>
+    <div style="display:flex; justify-content:flex-end; gap:8px; flex-wrap:wrap;">
+      <button type="button" class="btn" onclick="copyStudentCode()">Кодты көшіру</button>
+      <button type="button" class="btn btn-primary" onclick="directSubmitToTeacher()">Мұғалім панеліне тікелей жіберу</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast">Хабарлама</div>
+
+<script>
+// =========================================================================
+// 1. STATE & DATA DEFINITIONS
+// =========================================================================
+const PHASE_META = {
+  "Интерфаза": {
+    formula: "2n2c → 2n4c",
+    desc: "Ядро қабықшасы айқын, ядрошық жақсы көрінеді, хроматин жіпшелері шиыршықталмаған күйде. Жасуша бөлінуге дайындалады.",
+    color: "#db2777"
+  },
+  "Профаза": {
+    formula: "2n4c",
+    desc: "Хроматин шиыршықталып, қос хроматидалы хромосомалар айқындалады; ядрошық пен ядро қабықшасы ери бастайды, бөліну ұршығы түзіледі.",
+    color: "#7c3aed"
+  },
+  "Метафаза": {
+    formula: "2n4c",
+    desc: "Ең жоғары дәрежеде шиыршықталған хромосомалар жасушаның экватор жазықтығына ретімен тізіліп, метафазалық тақташа түзеді.",
+    color: "#2563eb"
+  },
+  "Анафаза": {
+    formula: "4n4c",
+    desc: "Центромералар бөлініп, еншілес хроматидалар (дербес хромосомалар) бөліну ұршығының жіпшелерімен қарама-қарсы полюстерге таралады.",
+    color: "#059669"
+  },
+  "Телофаза": {
+    formula: "2n2c (әр полюсте)",
+    desc: "Полюстерге жиналған хромосомалар тарқатылады, жаңа ядро қабықшалары мен ядрошықтар түзіледі, ортасында жасушалық перде қалыптасады.",
+    color: "#d97706"
+  }
+};
+
+let microscopeCells = [];
+let selectedCellId = 1;
+let showHelperLabels = false;
+let currentZoom = 1;
+let mitoticIndexVerified = false;
+
+// Tab 2 Timeline Data
+const TIMELINE_STAGES = [
+  {
+    name: "Интерфаза: G₁ (Синтез алдындағы кезең)",
+    formula: "2n2c",
+    desc: "Жасуша белсенді өседі, құрылымдық және ферменттік нәруыздар, РНҚ синтезделеді, органоидтар саны артады."
+  },
+  {
+    name: "Интерфаза: S (Синтез кезеңі)",
+    formula: "2n4c",
+    desc: "ДНҚ молекуласы екі еселенеді (репликация), әр хромосома екі еншілес хроматидадан тұратын болады."
+  },
+  {
+    name: "Интерфаза: G₂ (Синтезден соңғы кезең)",
+    formula: "2n4c",
+    desc: "АТФ энергиясы жинақталады, бөліну ұршығын түзетін тубулин нәруыздары синтезделіп, митозға толық дайындық аяқталады."
+  },
+  {
+    name: "Профаза (Митоздың бірінші фазасы)",
+    formula: "2n4c",
+    desc: "Хромосомалар шиыршықталып қысқарады және жуандайды, ядро қабықшасы мен ядрошық ыдырайды, бөліну ұршығы қалыптасады."
+  },
+  {
+    name: "Метафаза (Хромосомалардың жинақталу фазасы)",
+    formula: "2n4c",
+    desc: "Хромосомалар жасушаның экваторына жинақталады, ұршық жіпшелері әр хромосоманың центромерасына (кинетохорға) бекиді."
+  },
+  {
+    name: "Анафаза (Хромосомалардың таралу фазасы)",
+    formula: "4n4c",
+    desc: "Еншілес хроматидалар бір-бірінен ажырап, дербес хромосомалар ретінде жасушаның қарама-қарсы полюстеріне қарай жылжиды."
+  },
+  {
+    name: "Телофаза (Бөлінудің аяқталу фазасы)",
+    formula: "2n2c (әр полюсте)",
+    desc: "Полюстерде ядро қабықшасы қайта түзіледі, хромосомалар жіңішкеріп хроматинге айналады, бөліну ұршығы жойылады."
+  },
+  {
+    name: "Цитокинез (Өсімдік жасушасының бөлінуі)",
+    formula: "2n2c + 2n2c",
+    desc: "Өсімдік жасушасының ортасында Гольджи көпіршіктерінен жасушалық перде (фрагмопласт) түзіліп, екі дербес жас жасуша пайда болады."
+  }
+];
+let currentStageIdx = 0;
+let timelineTimer = null;
+const savedSketches = {};
+
+// Tab 3 Textbook Tables Data
+const TABLE1_DATA = [
+  {
+    id: "t1_ana",
+    phase: "Анафаза",
+    options: [
+      "Еншілес хроматидалар ажырап, бөліну ұршығының жіпшелерімен қарама-қарсы полюстерге таралады",
+      "Ядро қабықшасы түзіліп, хромосомалар тарқатылады",
+      "Хромосомалар жасушаның экваторына жинақталады",
+      "Хроматин шиыршықталып, ядро қабықшасы ери бастайды"
+    ],
+    correct: 0
+  },
+  {
+    id: "t1_pro",
+    phase: "Профаза",
+    options: [
+      "Хромосомалар экватор жазықтығында орналасады",
+      "Хроматин шиыршықталып хромосомалар көрінеді, ядро қабықшасы мен ядрошық ериді, бөліну ұршығы түзіледі",
+      "Еншілес хроматидалар полюстерге ажырайды",
+      "Цитоплазма бөлініп, екі жас жасуша түзіледі"
+    ],
+    correct: 1
+  },
+  {
+    id: "t1_meta",
+    phase: "Метафаза",
+    options: [
+      "ДНҚ репликациясы жүреді",
+      "Ядро қабықшасы қалпына келеді",
+      "Шиыршықталған хромосомалар жасуша экваторына жинақталып, метафазалық тақташа түзеді",
+      "Еншілес хроматидалар полюстерге жылжиды"
+    ],
+    correct: 2
+  },
+  {
+    id: "t1_telo",
+    phase: "Телофаза",
+    options: [
+      "Хромосомалар экваторға тізіледі",
+      "Бөліну ұршығы жаңадан түзіле бастайды",
+      "Хроматин шиыршықталады",
+      "Полюстерде ядро қабықшалары қайта түзіледі, хромосомалар тарқатылады, жасуша пердесі қалыптасады"
+    ],
+    correct: 3
+  }
+];
+
+const TABLE2_DATA = [
+  {
+    id: "t2_g1",
+    group: "Интерфаза",
+    rowspan: 3,
+    subphase: "Синтез алдындағы кезең (G₁)",
+    procOpts: [
+      "Жасуша өседі, нәруыз бен РНҚ синтезделеді, органоидтар көбейеді",
+      "ДНҚ молекуласы екі еселенеді (репликация)",
+      "Хромосомалар экваторға жинақталады"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 0,
+    ansNc: 0
+  },
+  {
+    id: "t2_s",
+    group: null,
+    subphase: "Синтез кезеңі (S)",
+    procOpts: [
+      "Ядро қабықшасы ериді",
+      "ДНҚ репликациясы жүреді, хромосомалар екі хроматидалы болады",
+      "Цитокинез аяқталады"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 1,
+    ansNc: 1
+  },
+  {
+    id: "t2_g2",
+    group: null,
+    subphase: "Синтезден соңғы кезең (G₂)",
+    procOpts: [
+      "Еншілес хроматидалар полюстерге ажырайды",
+      "Ядро қабықшасы қайта түзіледі",
+      "АТФ жинақталып, бөліну ұршығының нәруыздары синтезделеді"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 2,
+    ansNc: 1
+  },
+  {
+    id: "t2_pro",
+    group: "Профаза (митоздың бірінші фазасы)",
+    colspan: 2,
+    procOpts: [
+      "Хромосомалар шиыршықталады, ядро қабықшасы ериді, бөліну ұршығы түзіледі",
+      "Хромосомалар экваторда орналасады",
+      "ДНҚ екі еселенеді"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 0,
+    ansNc: 1
+  },
+  {
+    id: "t2_meta",
+    group: "Метафаза (хромосомалардың жинақталу фазасы)",
+    colspan: 2,
+    procOpts: [
+      "Еншілес хроматидалар полюстерге таралады",
+      "Хромосомалар жасуша экваторына жинақталып, ұршық жіпшелері центромераға бекиді",
+      "Ядрошық қайта пайда болады"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 1,
+    ansNc: 1
+  },
+  {
+    id: "t2_ana",
+    group: "Анафаза (хромосомалардың таралу фазасы)",
+    colspan: 2,
+    procOpts: [
+      "Ядро қабықшасы түзіледі",
+      "Жасуша өседі, РНҚ синтезделеді",
+      "Центромералар бөлініп, еншілес хроматидалар қарама-қарсы полюстерге таралады"
+    ],
+    ncOpts: ["2n2c", "2n4c", "4n4c"],
+    ansProc: 2,
+    ansNc: 2
+  },
+  {
+    id: "t2_telo",
+    group: "Телофаза (бөлінудің аяқталу фазасы)",
+    colspan: 2,
+    procOpts: [
+      "Полюстерде ядро қабықшасы түзіліп, хромосомалар тарқатылады, жасуша бөлінуі аяқталады",
+      "Хромосомалар экватор жазықтығына жиналады",
+      "ДНҚ репликациясы басталады"
+    ],
+    ncOpts: ["2n2c (әр полюсте)", "2n4c", "4n4c"],
+    ansProc: 0,
+    ansNc: 0
+  }
+];
+
+let tablesScore = 0;
+
+// Tab 4 Quiz Data
+const QUIZ_QUESTIONS = [
+  {
+    id: "q1",
+    q: "1. Пияз тамыры ұшының препаратындағы 20 жасушаның 6-ы митоздың түрлі фазаларында (профаза, метафаза, анафаза, телофаза), ал 14-і интерфазада болса, митоздық индекс нешеге тең?",
+    opts: ["30%", "70%", "14%"],
+    correct: 0,
+    exp: "Митоздық индекс = (Бөлінетін жасушалар / Жалпы жасушалар) × 100% = (6 / 20) × 100% = 30%."
+  },
+  {
+    id: "q2",
+    q: "2. Митоздың анафаза сатысында жасушадағы хромосомалар мен ДНҚ жиынтығы қандай болады?",
+    opts: ["2n2c", "2n4c", "4n4c"],
+    correct: 2,
+    exp: "Анафазада еншілес хроматидалар ажырап, дербес хромосомаларға айналатындықтан, жасушада уақытша 4n4c жиынтығы болады."
+  },
+  {
+    id: "q3",
+    q: "3. Интерфазаның қай кезеңінде ДНҚ молекуласы екі еселеніп, жиынтығы 2n2c-ден 2n4c-ге өзгереді?",
+    opts: ["S (синтез) кезеңінде", "G₁ кезеңінде", "Телофазада"],
+    correct: 0,
+    exp: "ДНҚ репликациясы интерфазаның синтез (S) кезеңінде жүзеге асады."
+  },
+  {
+    id: "q4",
+    q: "4. Қоршаған орта факторлары (температураның күрт ауытқуы, ауыр металдар, радиация, химиялық мутагендер) митозға қалай әсер етуі мүмкін?",
+    opts: [
+      "Митозға ешқашан әсер етпейді",
+      "Бөліну ұршығын бұзып, хромосомалардың тең бөлінбеуіне (анеуплоидия, мутация) әкелуі мүмкін",
+      "Барлық жасушаларды мейозға ауыстырады"
+    ],
+    correct: 1,
+    exp: "Қолайсыз орта факторлары мен токсиндер бөліну ұршығының түзілуін тежеп, хромосомалардың дұрыс ажырамауына және мутацияларға себеп болады."
+  },
+  {
+    id: "q5",
+    q: "5. Митоздық бөлінудің әрбір фазасында хромосома саны неге байланысты өзгереді?",
+    opts: [
+      "ДНҚ репликациясына (S кезеңі) және анафазада еншілес хроматидалардың ажырауына",
+      "Тек жасуша қабырғасының қалыңдығына",
+      "Микроскоптың ұлғайту еселігіне"
+    ],
+    correct: 0,
+    exp: "S кезеңінде ДНҚ екі еселенеді (2n4c), ал анафазада хроматидалар ажырағанда хромосома саны 4n-ге жетіп, телофазада екі ядроға 2n2c болып тең бөлінеді."
+  },
+  {
+    id: "q6",
+    q: "6. Митоздың басты биологиялық маңызы неде?",
+    opts: [
+      "Хромосома санын екі есе азайтып, гаметалар түзу",
+      "Аналық жасушадағы генетикалық ақпараттың көшірмесін жаңа түзілген жас жасушаларға тең бөліп, тұқымқуалаушылық тұрақтылығын сақтау",
+      "Тек прокариоттардың бөлінуін қамтамасыз ету"
+    ],
+    correct: 1,
+    exp: "Митоз нәтижесінде аналық жасушаға толық ұқсас (2n) екі жас жасуша түзіліп, организмнің өсуі, регенерациясы және генетикалық тұрақтылығы қамтамасыз етіледі."
+  }
+];
+let quizScore = 0;
+
+// Teacher Roster State
+const teacherRoster = [
+  {
+    name: "Болатұлы Арман",
+    grade: "11 «А»",
+    microPct: 100,
+    tableScore: 10,
+    quizScore: 6,
+    note: "Митоздық индекс пен фаза формулаларын өте жақсы меңгерген."
+  },
+  {
+    name: "Қайратқызы Динара",
+    grade: "11 «А»",
+    microPct: 90,
+    tableScore: 9,
+    quizScore: 5,
+    note: "Анафазадағы 4n4c жиынтығын қайта пысықтау ұсынылды."
+  },
+  {
+    name: "Серікбай Нұрсұлтан",
+    grade: "11 «Ә»",
+    microPct: 80,
+    tableScore: 8,
+    quizScore: 5,
+    note: "Метафаза мен профаза айырмашылығы нақтыланды."
+  }
+];
+
+// =========================================================================
+// 2. INITIALIZATION & PERSISTENCE
+// =========================================================================
+function initApp() {
+  loadStudentIdentity();
+  generateNewField(true);
+  selectTimelineStage(0);
+  initSketchCanvas();
+  renderTextbookTables();
+  renderQuiz();
+  renderTeacherDashboard();
+  updateTopPills();
+}
+
+function loadStudentIdentity() {
+  try {
+    const saved = JSON.parse(localStorage.getItem("bio11_lab7_student") || "{}");
+    if (saved.name) document.getElementById("inpName").value = saved.name;
+    if (saved.grade) document.getElementById("inpClass").value = saved.grade;
+  } catch (e) {}
+
+  document.getElementById("inpName").addEventListener("input", saveStudentIdentity);
+  document.getElementById("inpClass").addEventListener("input", saveStudentIdentity);
+}
+
+function saveStudentIdentity() {
+  try {
+    localStorage.setItem("bio11_lab7_student", JSON.stringify({
+      name: document.getElementById("inpName").value,
+      grade: document.getElementById("inpClass").value
+    }));
+  } catch (e) {}
+}
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("visible");
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove("visible"), 2800);
+}
+
+function switchTab(tabId) {
+  document.querySelectorAll(".tab-panel").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
+  document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add("active");
+  if (tabId === "tab5") renderTeacherDashboard();
+}
+
+function updateTopPills() {
+  const classifiedCount = microscopeCells.filter(c => c.userPhase === c.truePhase).length;
+  document.getElementById("pillMicro").textContent = `Микроскоп: ${classifiedCount}/20`;
+  document.getElementById("pillTables").textContent = `Кестелер: ${tablesScore}/11`;
+  document.getElementById("pillQuiz").textContent = `Тест: ${quizScore}/6`;
+}
+
+// =========================================================================
+// 3. TAB 1: VIRTUAL MICROSCOPE & MITOTIC INDEX
+// =========================================================================
+function generateNewField(silent = false) {
+  // 20 cells arranged in 4 columns x 5 rows of onion root meristem tissue
+  // Realistic distribution: ~12-14 Interphase, 2-3 Prophase, 2 Meta, 1-2 Ana, 1-2 Telo
+  const pool = [
+    "Интерфаза", "Интерфаза", "Интерфаза", "Интерфаза",
+    "Интерфаза", "Интерфаза", "Интерфаза", "Интерфаза",
+    "Интерфаза", "Интерфаза", "Интерфаза", "Интерфаза",
+    "Интерфаза",
+    "Профаза", "Профаза", "Профаза",
+    "Метафаза", "Метафаза",
+    "Анафаза",
+    "Телофаза"
+  ];
+  // Shuffle pool
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+
+  microscopeCells = pool.map((phase, idx) => ({
+    id: idx + 1,
+    col: idx % 4,
+    row: Math.floor(idx / 4),
+    truePhase: phase,
+    userPhase: null
+  }));
+
+  mitoticIndexVerified = false;
+  document.getElementById("miFeedback").className = "feedback";
+  renderMicroscopeField();
+  selectMicroscopeCell(1);
+  updateClassificationCounts();
+  updateTopPills();
+  if (!silent) showToast("Пияз тамыры ұшының жаңа көру өрісі (20 жасуша) жүктелді.");
+}
+
+function renderCellStageGraphics(phase, cx, cy, w, h) {
+  if (phase === "Интерфаза") {
+    return `
+      <circle cx="${cx}" cy="${cy}" r="${Math.min(w, h) * 0.23}" fill="#f472b6" fill-opacity="0.48" stroke="#be185d" stroke-width="1.6" />
+      <circle cx="${cx + 4}" cy="${cy - 3}" r="4.2" fill="#9d174d" />
+      <circle cx="${cx - 5}" cy="${cy + 4}" r="1.4" fill="#831843" />
+      <circle cx="${cx + 2}" cy="${cy + 6}" r="1.3" fill="#831843" />
+    `;
+  }
+  if (phase === "Профаза") {
+    return `
+      <circle cx="${cx}" cy="${cy}" r="${Math.min(w, h) * 0.25}" fill="#f3e8ff" fill-opacity="0.45" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3" />
+      <path d="M${cx - 10} ${cy - 6} Q${cx - 2} ${cy - 12} ${cx + 6} ${cy - 4} M${cx - 8} ${cy + 4} Q${cx} ${cy + 11} ${cx + 9} ${cy + 3} M${cx - 4} ${cy - 9} L${cx + 4} ${cy + 8} M${cx + 8} ${cy - 8} L${cx - 6} ${cy + 6}" stroke="#5b21b6" stroke-width="2.4" stroke-linecap="round" fill="none" />
+    `;
+  }
+  if (phase === "Метафаза") {
+    return `
+      <line x1="${cx - 28}" y1="${cy}" x2="${cx + 28}" y2="${cy}" stroke="#93c5fd" stroke-width="1" stroke-dasharray="2,2" />
+      <path d="M${cx - 26} ${cy} L${cx - 6} ${cy - 10} M${cx - 26} ${cy} L${cx - 6} ${cy + 10} M${cx + 26} ${cy} L${cx + 6} ${cy - 10} M${cx + 26} ${cy} L${cx + 6} ${cy + 10}" stroke="#60a5fa" stroke-width="1" opacity="0.75" />
+      <line x1="${cx - 5}" y1="${cy - 14}" x2="${cx + 5}" y2="${cy - 8}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+      <line x1="${cx + 5}" y1="${cy - 14}" x2="${cx - 5}" y2="${cy - 8}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+      <line x1="${cx - 5}" y1="${cy - 3}" x2="${cx + 5}" y2="${cy + 3}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+      <line x1="${cx + 5}" y1="${cy - 3}" x2="${cx - 5}" y2="${cy + 3}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+      <line x1="${cx - 5}" y1="${cy + 8}" x2="${cx + 5}" y2="${cy + 14}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+      <line x1="${cx + 5}" y1="${cy + 8}" x2="${cx - 5}" y2="${cy + 14}" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" />
+    `;
+  }
+  if (phase === "Анафаза") {
+    return `
+      <path d="M${cx - 32} ${cy} L${cx - 12} ${cy - 10} M${cx - 32} ${cy} L${cx - 12} ${cy} M${cx - 32} ${cy} L${cx - 12} ${cy + 10}" stroke="#6ee7b7" stroke-width="1.1" />
+      <path d="M${cx + 32} ${cy} L${cx + 12} ${cy - 10} M${cx + 32} ${cy} L${cx + 12} ${cy} M${cx + 32} ${cy} L${cx + 12} ${cy + 10}" stroke="#6ee7b7" stroke-width="1.1" />
+      <polyline points="${cx - 10},${cy - 13} ${cx - 17},${cy - 9} ${cx - 10},${cy - 5}" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round" />
+      <polyline points="${cx - 10},${cy + 5} ${cx - 17},${cy + 9} ${cx - 10},${cy + 13}" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round" />
+      <polyline points="${cx + 10},${cy - 13} ${cx + 17},${cy - 9} ${cx + 10},${cy - 5}" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round" />
+      <polyline points="${cx + 10},${cy + 5} ${cx + 17},${cy + 9} ${cx + 10},${cy + 13}" fill="none" stroke="#047857" stroke-width="2.6" stroke-linecap="round" />
+    `;
+  }
+  // Телофаза
+  return `
+    <circle cx="${cx - 21}" cy="${cy}" r="11" fill="#fde68a" fill-opacity="0.7" stroke="#b45309" stroke-width="1.5" />
+    <circle cx="${cx + 21}" cy="${cy}" r="11" fill="#fde68a" fill-opacity="0.7" stroke="#b45309" stroke-width="1.5" />
+    <line x1="${cx}" y1="${cy - h * 0.42}" x2="${cx}" y2="${cy + h * 0.42}" stroke="#b45309" stroke-width="2.2" stroke-dasharray="3,2" />
+  `;
+}
+
+function renderMicroscopeField() {
+  const svg = document.getElementById("microscopeSvg");
+  const startX = 48;
+  const startY = 30;
+  const cellW = 122;
+  const cellH = 74;
+  const gapX = 6;
+  const gapY = 6;
+
+  let html = `
+    <rect x="0" y="0" width="600" height="450" fill="#fdf2f8" />
+  `;
+
+  microscopeCells.forEach(cell => {
+    const x = startX + cell.col * (cellW + gapX);
+    const y = startY + cell.row * (cellH + gapY);
+    const cx = x + cellW / 2;
+    const cy = y + cellH / 2;
+    const isSel = cell.id === selectedCellId;
+    const shortTag = cell.truePhase.slice(0, 3).toUpperCase();
+
+    html += `
+      <g class="onion-cell ${isSel ? "selected" : ""}" onclick="selectMicroscopeCell(${cell.id})">
+        <rect class="cell-wall" x="${x}" y="${y}" width="${cellW}" height="${cellH}" rx="8"
+              fill="${cell.userPhase === cell.truePhase ? "#ecfdf5" : "#fce7f3"}"
+              stroke="${isSel ? "#f59e0b" : "#be185d"}" stroke-width="${isSel ? "3.8" : "2"}" />
+        <rect x="${x + 4}" y="${y + 4}" width="${cellW - 8}" height="${cellH - 8}" rx="5"
+              fill="none" stroke="#f9a8d4" stroke-width="1" />
+        ${renderCellStageGraphics(cell.truePhase, cx, cy, cellW, cellH)}
+        <text x="${x + 8}" y="${y + 14}" fill="#64748b" font-size="9.5" font-weight="800">#${cell.id}</text>
+        ${showHelperLabels ? `
+          <rect x="${x + cellW - 34}" y="${y + 4}" width="30" height="14" rx="4" fill="#0f172a" />
+          <text class="cell-badge-tag" x="${x + cellW - 19}" y="${y + 14}" text-anchor="middle" fill="#34d399">${shortTag}</text>
+        ` : ""}
+        ${cell.userPhase ? `
+          <circle cx="${x + cellW - 10}" cy="${y + cellH - 10}" r="5" fill="${cell.userPhase === cell.truePhase ? "#10b981" : "#f43f5e"}" />
+        ` : ""}
+      </g>
+    `;
+  });
+
+  svg.innerHTML = html;
+}
+
+function selectMicroscopeCell(cellId) {
+  selectedCellId = cellId;
+  const cell = microscopeCells.find(c => c.id === cellId);
+  if (!cell) return;
+
+  const meta = PHASE_META[cell.truePhase];
+  document.getElementById("selCellHeader").textContent = `Жасуша #${cell.id} таңдалды (20 жасушаның ішінен)`;
+  document.getElementById("selCellPhaseTitle").textContent = cell.truePhase;
+  document.getElementById("selCellFormula").textContent = `Хромосома / ДНҚ жиынтығы: ${meta.formula}`;
+  document.getElementById("selCellDesc").textContent = meta.desc;
+
+  // Render enlarged inspector SVG
+  const detailSvg = document.getElementById("detailCellSvg");
+  detailSvg.innerHTML = `
+    <rect x="8" y="8" width="104" height="104" rx="12" fill="#fce7f3" stroke="#be185d" stroke-width="3" />
+    ${renderCellStageGraphics(cell.truePhase, 60, 60, 100, 100)}
+  `;
+
+  // Highlight user's classification button if already chosen
+  document.querySelectorAll("#classifyButtons .phase-chip").forEach(btn => {
+    btn.classList.toggle("active-choice", btn.textContent.trim() === cell.userPhase);
+  });
+
+  const msgEl = document.getElementById("classifyMsg");
+  if (!cell.userPhase) {
+    msgEl.textContent = "";
+  } else if (cell.userPhase === cell.truePhase) {
+    msgEl.style.color = "#065f46";
+    msgEl.textContent = `✓ Дұрыс жіктелді: ${cell.truePhase} (${meta.formula})`;
+  } else {
+    msgEl.style.color = "#be123c";
+    msgEl.textContent = `✕ Қате: бұл жасуша ${cell.truePhase} сатысында.`;
+  }
+
+  renderMicroscopeField();
+}
+
+function classifySelectedCell(chosenPhase) {
+  const cell = microscopeCells.find(c => c.id === selectedCellId);
+  if (!cell) return;
+  cell.userPhase = chosenPhase;
+  selectMicroscopeCell(selectedCellId);
+  updateClassificationCounts();
+  updateTopPills();
+}
+
+function updateClassificationCounts() {
+  const counts = { "Интерфаза": 0, "Профаза": 0, "Метафаза": 0, "Анафаза": 0, "Телофаза": 0 };
+  microscopeCells.forEach(c => {
+    if (c.userPhase && counts[c.userPhase] !== undefined) {
+      counts[c.userPhase]++;
+    }
+  });
+  document.getElementById("cntUserInter").textContent = counts["Интерфаза"];
+  document.getElementById("cntUserPro").textContent = counts["Профаза"];
+  document.getElementById("cntUserMeta").textContent = counts["Метафаза"];
+  document.getElementById("cntUserAna").textContent = counts["Анафаза"];
+  document.getElementById("cntUserTelo").textContent = counts["Телофаза"];
+}
+
+function fillCountsFromClassification() {
+  const counts = { "Интерфаза": 0, "Профаза": 0, "Метафаза": 0, "Анафаза": 0, "Телофаза": 0 };
+  microscopeCells.forEach(c => {
+    if (c.userPhase) counts[c.userPhase]++;
+  });
+  document.getElementById("inpCountInter").value = counts["Интерфаза"];
+  document.getElementById("inpCountPro").value = counts["Профаза"];
+  document.getElementById("inpCountMeta").value = counts["Метафаза"];
+  document.getElementById("inpCountAna").value = counts["Анафаза"];
+  document.getElementById("inpCountTelo").value = counts["Телофаза"];
+  showToast("Жіктелген жасуша сандары кестеге көшірілді.");
+}
+
+function verifyMitoticIndex() {
+  const trueCounts = { "Интерфаза": 0, "Профаза": 0, "Метафаза": 0, "Анафаза": 0, "Телофаза": 0 };
+  microscopeCells.forEach(c => trueCounts[c.truePhase]++);
+
+  const uInter = parseInt(document.getElementById("inpCountInter").value || "0", 10);
+  const uPro = parseInt(document.getElementById("inpCountPro").value || "0", 10);
+  const uMeta = parseInt(document.getElementById("inpCountMeta").value || "0", 10);
+  const uAna = parseInt(document.getElementById("inpCountAna").value || "0", 10);
+  const uTelo = parseInt(document.getElementById("inpCountTelo").value || "0", 10);
+  const uMI = parseFloat(document.getElementById("inpMitoticIndex").value);
+
+  const trueDividing = trueCounts["Профаза"] + trueCounts["Метафаза"] + trueCounts["Анафаза"] + trueCounts["Телофаза"];
+  const trueMI = (trueDividing / 20) * 100;
+
+  const countsMatch = (
+    uInter === trueCounts["Интерфаза"] &&
+    uPro === trueCounts["Профаза"] &&
+    uMeta === trueCounts["Метафаза"] &&
+    uAna === trueCounts["Анафаза"] &&
+    uTelo === trueCounts["Телофаза"]
+  );
+  const miMatch = !isNaN(uMI) && Math.abs(uMI - trueMI) <= 0.5;
+
+  const fb = document.getElementById("miFeedback");
+  fb.classList.add("show");
+
+  if (countsMatch && miMatch) {
+    mitoticIndexVerified = true;
+    fb.className = "feedback show ok";
+    fb.textContent = `✓ Өте жақсы! Бөлінетін жасушалар саны = ${trueDividing} (П:${trueCounts["Профаза"]} + М:${trueCounts["Метафаза"]} + А:${trueCounts["Анафаза"]} + Т:${trueCounts["Телофаза"]}), Митоздық индекс = ${trueMI.toFixed(1)}%.`;
+    showToast("Митоздық индекс дұрыс есептелді!");
+  } else {
+    fb.className = "feedback show err";
+    fb.textContent = `✕ Қайта тексеріңіз: Көру өрісінде Интерфаза=${trueCounts["Интерфаза"]}, Профаза=${trueCounts["Профаза"]}, Метафаза=${trueCounts["Метафаза"]}, Анафаза=${trueCounts["Анафаза"]}, Телофаза=${trueCounts["Телофаза"]}. Бөлінетін жасушалар = ${trueDividing}/20 → МИ = ${trueMI.toFixed(1)}%.`;
+  }
+}
+
+function setZoom(zoomLevel, btn) {
+  currentZoom = zoomLevel;
+  document.querySelectorAll(".zoom-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById("microscopeSvg").style.transform = `scale(${zoomLevel})`;
+}
+
+function updateFocus(val) {
+  const blurPx = Math.abs(Number(val)) * 0.45;
+  document.getElementById("microscopeSvg").style.filter = `blur(${blurPx}px)`;
+  const status = document.getElementById("focusStatus");
+  if (Number(val) === 0) {
+    status.textContent = "Анық (0)";
+    status.style.color = "#34d399";
+  } else {
+    status.textContent = `Бұлыңғыр (${val})`;
+    status.style.color = "#fbbf24";
+  }
+}
+
+function autoRevealLabels() {
+  showHelperLabels = !showHelperLabels;
+  renderMicroscopeField();
+  showToast(showHelperLabels ? "Көмекші фаза белгілері қосылды." : "Көмекші фаза белгілері жасырылды.");
+}
+
+// =========================================================================
+// 4. TAB 2: ANIMATED TIMELINE & CELL SKETCHING CANVAS
+// =========================================================================
+function selectTimelineStage(idx) {
+  currentStageIdx = idx;
+  document.querySelectorAll("#timelineButtons .stage-btn").forEach((b, i) => {
+    b.classList.toggle("active", i === idx);
+  });
+
+  const stage = TIMELINE_STAGES[idx];
+  document.getElementById("tlStageTitle").textContent = stage.name;
+  document.getElementById("tlStageFormula").textContent = `Жиынтығы: ${stage.formula}`;
+  document.getElementById("tlStageDesc").textContent = stage.desc;
+
+  renderTimelineSvg(idx);
+}
+
+function renderTimelineSvg(idx) {
+  const svg = document.getElementById("timelineSvg");
+  let inner = `
+    <rect x="45" y="18" width="290" height="194" rx="22" fill="#fdf2f8" stroke="#065f46" stroke-width="5" />
+    <rect x="54" y="27" width="272" height="176" rx="16" fill="none" stroke="#10b981" stroke-width="1.5" />
+  `;
+
+  if (idx <= 2) {
+    // Interphase G1, S, G2
+    const r = idx === 0 ? 48 : (idx === 1 ? 56 : 62);
+    inner += `
+      <circle cx="190" cy="115" r="${r}" fill="#f3e8ff" stroke="#7c3aed" stroke-width="3" />
+      <circle cx="206" cy="102" r="11" fill="#6d28d9" />
+      <path d="M165 105 Q185 88 205 118 T175 135" fill="none" stroke="#9333ea" stroke-width="2" />
+      ${idx >= 1 ? `<path d="M162 122 Q188 102 212 130" fill="none" stroke="#db2777" stroke-width="2.2" stroke-dasharray="4,2" />` : ""}
+      <text x="190" y="190" text-anchor="middle" fill="#4c1d95" font-size="11" font-weight="bold">
+        ${idx === 0 ? "G₁: өсу және РНҚ/нәруыз синтезі" : idx === 1 ? "S: ДНҚ репликациясы (2n2c → 2n4c)" : "G₂: ұршық нәруыздарының синтезі"}
+      </text>
+    `;
+  } else if (idx === 3) {
+    // Prophase
+    inner += `
+      <circle cx="190" cy="115" r="62" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7,5" />
+      <path d="M165 92 L182 108 M182 92 L165 108" stroke="#6d28d9" stroke-width="4.5" stroke-linecap="round" />
+      <path d="M198 90 L215 106 M215 90 L198 106" stroke="#db2777" stroke-width="4.5" stroke-linecap="round" />
+      <path d="M170 124 L187 140 M187 124 L170 140" stroke="#2563eb" stroke-width="4.5" stroke-linecap="round" />
+      <path d="M200 122 L217 138 M217 122 L200 138" stroke="#059669" stroke-width="4.5" stroke-linecap="round" />
+      <text x="190" y="192" text-anchor="middle" fill="#4c1d95" font-size="11" font-weight="bold">Ядро қабықшасы ериді, 2-хроматидалы хромосомалар айқындалады</text>
+    `;
+  } else if (idx === 4) {
+    // Metaphase
+    inner += `
+      <line x1="190" y1="32" x2="190" y2="198" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3" />
+      <path d="M66 115 L182 65 M66 115 L182 98 M66 115 L182 132 M66 115 L182 165" stroke="#0ea5e9" stroke-width="1.4" />
+      <path d="M314 115 L198 65 M314 115 L198 98 M314 115 L198 132 M314 115 L198 165" stroke="#0ea5e9" stroke-width="1.4" />
+      ${[65, 98, 132, 165].map((yPos, k) => `
+        <path d="M182 ${yPos - 7} L198 ${yPos + 7} M198 ${yPos - 7} L182 ${yPos + 7}" stroke="${k % 2 === 0 ? "#6d28d9" : "#db2777"}" stroke-width="4.5" stroke-linecap="round" />
+      `).join("")}
+      <text x="190" y="192" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="bold">Экватор жазықтығында метафазалық тақташа (2n4c)</text>
+    `;
+  } else if (idx === 5) {
+    // Anaphase
+    inner += `
+      ${[65, 98, 132, 165].map((yPos, k) => `
+        <line x1="66" y1="115" x2="132" y2="${yPos}" stroke="#34d399" stroke-width="1.4" />
+        <line x1="314" y1="115" x2="248" y2="${yPos}" stroke="#34d399" stroke-width="1.4" />
+        <polyline points="142,${yPos - 7} 130,${yPos} 142,${yPos + 7}" fill="none" stroke="${k % 2 === 0 ? "#6d28d9" : "#db2777"}" stroke-width="4" stroke-linecap="round" />
+        <polyline points="238,${yPos - 7} 250,${yPos} 238,${yPos + 7}" fill="none" stroke="${k % 2 === 0 ? "#6d28d9" : "#db2777"}" stroke-width="4" stroke-linecap="round" />
+      `).join("")}
+      <text x="190" y="192" text-anchor="middle" fill="#065f46" font-size="11" font-weight="bold">Еншілес хроматидалар полюстерге таралады (4n4c)</text>
+    `;
+  } else if (idx === 6) {
+    // Telophase
+    inner += `
+      <circle cx="118" cy="115" r="42" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,3" />
+      <circle cx="262" cy="115" r="42" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="5,3" />
+      <path d="M104 105 Q118 95 130 116 T110 128" fill="none" stroke="#6d28d9" stroke-width="2.2" />
+      <path d="M248 105 Q262 95 274 116 T254 128" fill="none" stroke="#6d28d9" stroke-width="2.2" />
+      <line x1="190" y1="55" x2="190" y2="175" stroke="#d97706" stroke-width="3" stroke-dasharray="5,4" />
+      <text x="190" y="192" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">Ядро қабықшалары қалпына келеді (әр полюсте 2n2c)</text>
+    `;
+  } else {
+    // Cytokinesis
+    inner += `
+      <rect x="186" y="24" width="8" height="182" fill="#065f46" />
+      <circle cx="118" cy="115" r="38" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5" />
+      <circle cx="126" cy="108" r="8" fill="#6d28d9" />
+      <circle cx="262" cy="115" r="38" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5" />
+      <circle cx="270" cy="108" r="8" fill="#6d28d9" />
+      <text x="190" y="192" text-anchor="middle" fill="#065f46" font-size="11" font-weight="bold">Жасушалық перде түзіліп, екі жас жасуша (2n2c) пайда болды</text>
+    `;
+  }
+
+  svg.innerHTML = inner;
+}
+
+function toggleTimelinePlay() {
+  const btn = document.getElementById("btnAutoPlay");
+  if (timelineTimer) {
+    clearInterval(timelineTimer);
+    timelineTimer = null;
+    btn.textContent = "▶ Автоматты ойнату";
+    return;
+  }
+  btn.textContent = "⏸ Тоқтату";
+  timelineTimer = setInterval(() => {
+    selectTimelineStage((currentStageIdx + 1) % TIMELINE_STAGES.length);
+  }, 1900);
+}
+
+// Interactive Drawing Canvas
+let isDrawing = false;
+function initSketchCanvas() {
+  const canvas = document.getElementById("sketchCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.lineWidth = 3;
+
+  function getPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+      x: ((clientX - rect.left) / rect.width) * canvas.width,
+      y: ((clientY - rect.top) / rect.height) * canvas.height
+    };
+  }
+
+  function start(e) {
+    isDrawing = true;
+    const p = getPos(e);
+    ctx.strokeStyle = document.getElementById("brushColor").value;
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    if (e.cancelable) e.preventDefault();
+  }
+
+  function move(e) {
+    if (!isDrawing) return;
+    const p = getPos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    if (e.cancelable) e.preventDefault();
+  }
+
+  function end() {
+    isDrawing = false;
+  }
+
+  canvas.addEventListener("mousedown", start);
+  canvas.addEventListener("mousemove", move);
+  window.addEventListener("mouseup", end);
+  canvas.addEventListener("touchstart", start, { passive: false });
+  canvas.addEventListener("touchmove", move, { passive: false });
+  canvas.addEventListener("touchend", end);
+
+  stampCellTemplate();
+}
+
+function stampCellTemplate() {
+  const canvas = document.getElementById("sketchCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.save();
+  ctx.strokeStyle = "#065f46";
+  ctx.lineWidth = 4;
+  ctx.strokeRect(110, 30, 320, 250);
+  ctx.restore();
+}
+
+function stampPhaseHint() {
+  const phase = document.getElementById("sketchPhaseSelect").value;
+  const canvas = document.getElementById("sketchCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.save();
+  ctx.strokeStyle = "#94a3b8";
+  ctx.setLineDash([5, 4]);
+  ctx.lineWidth = 2;
+
+  if (phase === "Профаза") {
+    ctx.beginPath();
+    ctx.arc(270, 155, 75, 0, Math.PI * 2);
+    ctx.stroke();
+  } else if (phase === "Метафаза") {
+    ctx.beginPath();
+    ctx.moveTo(270, 40);
+    ctx.lineTo(270, 270);
+    ctx.stroke();
+  } else if (phase === "Анафаза") {
+    ctx.beginPath();
+    ctx.moveTo(130, 155);
+    ctx.lineTo(210, 100);
+    ctx.moveTo(130, 155);
+    ctx.lineTo(210, 210);
+    ctx.moveTo(410, 155);
+    ctx.lineTo(330, 100);
+    ctx.moveTo(410, 155);
+    ctx.lineTo(330, 210);
+    ctx.stroke();
+  } else {
+    ctx.beginPath();
+    ctx.arc(195, 155, 52, 0, Math.PI * 2);
+    ctx.moveTo(397, 155);
+    ctx.arc(345, 155, 52, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  ctx.restore();
+  showToast(`${phase}: бағыттаушы контур қосылды.`);
+}
+
+function clearSketchCanvas() {
+  const canvas = document.getElementById("sketchCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function switchSketchPhase(phase) {
+  clearSketchCanvas();
+  if (savedSketches[phase]) {
+    const img = new Image();
+    img.onload = () => document.getElementById("sketchCanvas").getContext("2d").drawImage(img, 0, 0);
+    img.src = savedSketches[phase];
+  } else {
+    stampCellTemplate();
+  }
+}
+
+function saveCurrentSketch() {
+  const phase = document.getElementById("sketchPhaseSelect").value;
+  const canvas = document.getElementById("sketchCanvas");
+  savedSketches[phase] = canvas.toDataURL("image/png");
+  const count = Object.keys(savedSketches).length;
+  document.getElementById("sketchStatusText").textContent = `✓ Сақталған суреттер: ${Object.keys(savedSketches).join(", ")} (${count}/4)`;
+  renderTextbookTables();
+  showToast(`${phase} фазасының суреті дәптерге бекітілді!`);
+}
+
+// =========================================================================
+// 5. TAB 3: AUTO-CHECKED TEXTBOOK TABLES
+// =========================================================================
+function renderTextbookTables() {
+  const t1Body = document.getElementById("table1Body");
+  const prevT1 = {};
+  TABLE1_DATA.forEach(r => {
+    const el = document.getElementById(r.id);
+    if (el) prevT1[r.id] = el.value;
+  });
+
+  t1Body.innerHTML = TABLE1_DATA.map(row => `
+    <tr id="row_${row.id}">
+      <td><strong>${row.phase}</strong></td>
+      <td>
+        <select id="${row.id}">
+          <option value="">— Фазаның ерекшелігін таңдаңыз —</option>
+          ${row.options.map((opt, i) => `<option value="${i}" ${prevT1[row.id] === String(i) ? "selected" : ""}>${opt}</option>`).join("")}
+        </select>
+      </td>
+      <td>
+        ${savedSketches[row.phase]
+          ? `<span style="color:#065f46; font-weight:700; font-size:12px;">✓ Сурет салынған</span>`
+          : `<span style="color:#64748b; font-size:12px;">2-қойындыда салуға болады</span>`
+        }
+      </td>
+    </tr>
+  `).join("");
+
+  const t2Body = document.getElementById("table2Body");
+  const prevT2 = {};
+  TABLE2_DATA.forEach(r => {
+    const ep = document.getElementById(r.id + "_proc");
+    const en = document.getElementById(r.id + "_nc");
+    if (ep) prevT2[r.id + "_proc"] = ep.value;
+    if (en) prevT2[r.id + "_nc"] = en.value;
+  });
+
+  t2Body.innerHTML = TABLE2_DATA.map(row => {
+    let firstCells = "";
+    if (row.rowspan) {
+      firstCells = `<td rowspan="${row.rowspan}" style="font-weight:800; background:#ecfdf5;">${row.group}</td><td><strong>${row.subphase}</strong></td>`;
+    } else if (row.subphase) {
+      firstCells = `<td><strong>${row.subphase}</strong></td>`;
+    } else {
+      firstCells = `<td colspan="2"><strong>${row.group}</strong></td>`;
+    }
+
+    return `
+      <tr id="row_${row.id}">
+        ${firstCells}
+        <td>
+          <select id="${row.id}_proc">
+            <option value="">— Жүретін процесті таңдаңыз —</option>
+            ${row.procOpts.map((o, i) => `<option value="${i}" ${prevT2[row.id + "_proc"] === String(i) ? "selected" : ""}>${o}</option>`).join("")}
+          </select>
+        </td>
+        <td>
+          <select id="${row.id}_nc">
+            <option value="">— n және c —</option>
+            ${row.ncOpts.map((o, i) => `<option value="${i}" ${prevT2[row.id + "_nc"] === String(i) ? "selected" : ""}>${o}</option>`).join("")}
+          </select>
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function checkTextbookTables() {
+  let score = 0;
+
+  TABLE1_DATA.forEach(row => {
+    const val = document.getElementById(row.id).value;
+    const tr = document.getElementById("row_" + row.id);
+    if (val === String(row.correct)) {
+      score++;
+      tr.className = "row-correct";
+    } else {
+      tr.className = "row-wrong";
+    }
+  });
+
+  TABLE2_DATA.forEach(row => {
+    const vp = document.getElementById(row.id + "_proc").value;
+    const vn = document.getElementById(row.id + "_nc").value;
+    const tr = document.getElementById("row_" + row.id);
+    if (vp === String(row.ansProc) && vn === String(row.ansNc)) {
+      score++;
+      tr.className = "row-correct";
+    } else {
+      tr.className = "row-wrong";
+    }
+  });
+
+  tablesScore = score;
+  updateTopPills();
+
+  const fb = document.getElementById("tablesFeedback");
+  fb.classList.add("show");
+  if (score === 11) {
+    fb.className = "feedback show ok";
+    fb.textContent = "✓ Керемет! Барлық 11 кесте жолы дұрыс толтырылды (11 / 11 ұпай).";
+    showToast("Бақылау кестелері толық дұрыс!");
+  } else {
+    fb.className = "feedback show err";
+    fb.textContent = `Нәтиже: ${score} / 11 ұпай. Қызылмен белгіленген жолдарды тексеріңіз: G₁ (2n2c), S және G₂ (2n4c), Профаза (2n4c), Метафаза (2n4c), Анафаза (4n4c), Телофаза (2n2c).`;
+  }
+}
+
+// =========================================================================
+// 6. TAB 4: 6-QUESTION QUIZ
+// =========================================================================
+function renderQuiz() {
+  const box = document.getElementById("quizContainer");
+  box.innerHTML = QUIZ_QUESTIONS.map(item => `
+    <div class="quiz-item" id="box_${item.id}">
+      <div class="quiz-q">${item.q}</div>
+      <div>
+        ${item.opts.map((opt, idx) => `
+          <label class="quiz-opt">
+            <input type="radio" name="${item.id}" value="${idx}" />
+            <span>${opt}</span>
+          </label>
+        `).join("")}
+      </div>
+      <div class="quiz-exp" id="exp_${item.id}"><strong>Түсіндірме:</strong> ${item.exp}</div>
+    </div>
+  `).join("");
+}
+
+function checkQuiz() {
+  let score = 0;
+  let answered = 0;
+
+  QUIZ_QUESTIONS.forEach(item => {
+    const sel = document.querySelector(`input[name="${item.id}"]:checked`);
+    const box = document.getElementById("box_" + item.id);
+    const exp = document.getElementById("exp_" + item.id);
+    exp.classList.add("show");
+
+    if (sel) {
+      answered++;
+      if (Number(sel.value) === item.correct) {
+        score++;
+        box.className = "quiz-item q-ok";
+      } else {
+        box.className = "quiz-item q-err";
+      }
+    } else {
+      box.className = "quiz-item q-err";
+    }
+  });
+
+  quizScore = score;
+  updateTopPills();
+
+  const fb = document.getElementById("quizFeedback");
+  fb.classList.add("show");
+  if (answered < QUIZ_QUESTIONS.length) {
+    fb.className = "feedback show info";
+    fb.textContent = `Сіз ${answered} / 6 сұраққа жауап бердіңіз. Ағымдағы балл: ${score} / 6. Барлық сұрақтарға жауап беріп қайта тексеріңіз.`;
+  } else {
+    fb.className = score >= 5 ? "feedback show ok" : "feedback show info";
+    fb.textContent = `Тест аяқталды! Сіздің нәтижеңіз: ${score} / 6 ұпай (${Math.round((score / 6) * 100)}%). Әр сұрақтың астындағы түсіндірмемен танысыңыз.`;
+    showToast(`Тест нәтижесі: ${score}/6 ұпай!`);
+  }
+}
+
+// =========================================================================
+// 7. SUBMISSION CODE & TEACHER PANEL
+// =========================================================================
+function buildCurrentStudentRecord() {
+  const name = (document.getElementById("inpName").value || "").trim() || "Аты-жөні көрсетілмеген";
+  const grade = (document.getElementById("inpClass").value || "").trim() || "11-сынып";
+  const classifiedRight = microscopeCells.filter(c => c.userPhase === c.truePhase).length;
+  const microPct = Math.round(((classifiedRight / 20) * 0.7 + (mitoticIndexVerified ? 0.3 : 0)) * 100);
+
+  return {
+    name,
+    grade,
+    microPct,
+    tableScore: tablesScore,
+    quizScore: quizScore,
+    note: "Оқушы жіберген нәтиже"
+  };
+}
+
+function openCodeModal() {
+  const rec = buildCurrentStudentRecord();
+  const payload = JSON.stringify({
+    lab: "BIO11_LAB7_MITOSIS",
+    name: rec.name,
+    grade: rec.grade,
+    microPct: rec.microPct,
+    tableScore: rec.tableScore,
+    quizScore: rec.quizScore
+  });
+  // Safe UTF-8 Base64 encoding
+  const b64 = btoa(unescape(encodeURIComponent(payload)));
+  document.getElementById("studentCodeOutput").value = b64;
+  document.getElementById("codeModal").classList.add("open");
+}
+
+function closeCodeModal() {
+  document.getElementById("codeModal").classList.remove("open");
+}
+
+function copyStudentCode() {
+  const ta = document.getElementById("studentCodeOutput");
+  ta.select();
+  document.execCommand("copy");
+  showToast("Нәтиже коды алмасу буферіне көшірілді!");
+}
+
+function directSubmitToTeacher() {
+  addCurrentStudentToTeacher();
+  closeCodeModal();
+  switchTab("tab5");
+}
+
+function addCurrentStudentToTeacher() {
+  const rec = buildCurrentStudentRecord();
+  const existingIdx = teacherRoster.findIndex(r => r.name === rec.name && r.grade === rec.grade);
+  if (existingIdx >= 0) {
+    teacherRoster[existingIdx] = rec;
+  } else {
+    teacherRoster.unshift(rec);
+  }
+  renderTeacherDashboard();
+  showToast(`${rec.name} нәтижесі Мұғалім панеліне қосылды.`);
+}
+
+function importCodesToTeacher() {
+  const raw = document.getElementById("teacherImportArea").value.trim();
+  if (!raw) {
+    showToast("Алдымен оқушының кодын енгізіңіз.");
+    return;
+  }
+
+  const lines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  let imported = 0;
+
+  lines.forEach(line => {
+    try {
+      let obj = null;
+      if (line.startsWith("{")) {
+        obj = JSON.parse(line);
+      } else {
+        const decoded = decodeURIComponent(escape(atob(line)));
+        obj = JSON.parse(decoded);
+      }
+      if (obj && obj.name) {
+        teacherRoster.unshift({
+          name: obj.name,
+          grade: obj.grade || "11-сынып",
+          microPct: Number(obj.microPct) || 0,
+          tableScore: Number(obj.tableScore) || 0,
+          quizScore: Number(obj.quizScore) || 0,
+          note: "Код арқылы импортталды"
+        });
+        imported++;
+      }
+    } catch (e) {}
+  });
+
+  if (imported > 0) {
+    document.getElementById("teacherImportArea").value = "";
+    renderTeacherDashboard();
+    showToast(`${imported} оқушының нәтижесі сәтті жүктелді!`);
+  } else {
+    showToast("Код форматы жарамсыз. Base64 немесе JSON кодын тексеріңіз.");
+  }
+}
+
+function renderTeacherDashboard() {
+  const count = teacherRoster.length || 1;
+  const avgMicro = Math.round(teacherRoster.reduce((s, r) => s + r.microPct, 0) / count);
+  const avgTables = Math.round(teacherRoster.reduce((s, r) => s + (r.tableScore / 11) * 100, 0) / count);
+  const avgQuiz = Math.round(teacherRoster.reduce((s, r) => s + (r.quizScore / 6) * 100, 0) / count);
+  const avgTotal = Math.round((avgMicro + avgTables + avgQuiz) / 3);
+
+  const metrics = [
+    { label: "Микроскоп & МИ есебі", pct: avgMicro },
+    { label: "Бақылау кестелері (11)", pct: avgTables },
+    { label: "Бекіту тесті (6 сұрақ)", pct: avgQuiz },
+    { label: "Жалпы сынып меңгеруі", pct: avgTotal }
+  ];
+
+  document.getElementById("analyticsChart").innerHTML = metrics.map(m => `
+    <div class="bar-row">
+      <span>${m.label}</span>
+      <div class="bar-track"><div class="bar-fill" style="width:${m.pct}%;"></div></div>
+      <span style="text-align:right; color:var(--primary);">${m.pct}%</span>
+    </div>
+  `).join("");
+
+  document.getElementById("teacherTableBody").innerHTML = teacherRoster.map((r, i) => {
+    const totalPct = Math.round(((r.microPct / 100) + (r.tableScore / 11) + (r.quizScore / 6)) / 3 * 100);
+    return `
+      <tr>
+        <td><strong>${r.name}</strong></td>
+        <td>${r.grade}</td>
+        <td>${r.microPct}%</td>
+        <td>${r.tableScore} / 11</td>
+        <td>${r.quizScore} / 6</td>
+        <td><strong>${totalPct}%</strong></td>
+        <td>
+          <input type="text" class="note-input" value="${r.note.replace(/"/g, "&quot;")}"
+                 onchange="teacherRoster[${i}].note = this.value" />
+        </td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function exportTeacherCSV() {
+  const header = ["Оқушының аты-жөні", "Сыныбы", "Микроскоп & МИ (%)", "Бақылау кестелері (11)", "Тест (6)", "Жалпы (%)", "Мұғалім ескертпесі"];
+  const rows = teacherRoster.map(r => {
+    const totalPct = Math.round(((r.microPct / 100) + (r.tableScore / 11) + (r.quizScore / 6)) / 3 * 100);
+    return [
+      `"${r.name.replace(/"/g, '""')}"`,
+      `"${r.grade.replace(/"/g, '""')}"`,
+      r.microPct,
+      `${r.tableScore}/11`,
+      `${r.quizScore}/6`,
+      `${totalPct}%`,
+      `"${r.note.replace(/"/g, '""')}"`
+    ].join(",");
+  });
+
+  const csvContent = "\uFEFF" + [header.join(","), ...rows].join("\n");
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "11_synyp_7_zertkhanalyk_mitoz_natizheleri.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast("CSV файлы жүктелді!");
+}
+
+window.onload = initApp;
+</script>
+</body>
+</html>
